@@ -5,9 +5,24 @@
   home.homeDirectory = "/home/abhishek";
 
   # Packages that should be installed to the user profile.
-  home.packages = [
-    pkgs.fastfetch
+  home.packages = with pkgs; [
+    fastfetch
+    btop
   ];
+
+
+  # Basic configuration for git
+    programs.git = {
+    enable = true;
+    userName = "Abhishek001konni";
+    userEmail = "abhishek001konni@gmail.com";
+    extraConfig = {
+      gpg = { format = "ssh"; };
+      user = { signingkey = "/home/abhishek/.ssh/id_ed25519"; };
+      commit = { gpgsign = true; };
+    };
+  };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
