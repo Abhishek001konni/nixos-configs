@@ -8,8 +8,34 @@
   home.packages = with pkgs; [
     fastfetch
     btop
+    vscodium
+    kitty
+    wofi
+    waybar
+    brightnessctl
+    wl-clipboard
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
   ];
 
+  #ZSH
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+  };
+
+    # Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Basic configuration for git
     programs.git = {
@@ -23,6 +49,14 @@
     };
   };
 
+  # vscodium
+    programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+    ];
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

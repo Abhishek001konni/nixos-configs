@@ -53,34 +53,14 @@
   ];
 
   # ZSH
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
-  };
+  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  # File manager
-  programs.thunar.enable = true;
+  
+  # Thunar 
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
   programs.xfconf.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -134,11 +114,6 @@
     wget
     git
     pciutils
-    kitty
-    wofi
-    waybar
-    brightnessctl
-    wl-clipboard
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -154,6 +129,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
