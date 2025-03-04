@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -31,8 +31,11 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Experimental Features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -42,42 +45,42 @@
 
   # Hyprland
   programs.hyprland.enable = true;
-  
+
   # Fonts
   fonts.packages = with pkgs; [
     font-awesome
-    roboto 
+    roboto
   ];
-  
+
   # ZSH
-  programs.zsh = { 
-     enable = true;
-     autosuggestions.enable = true;
-     syntaxHighlighting.enable = true;
-     ohMyZsh = {
-       enable = true;
-       plugins = [ "git" ];
-       theme = "robbyrussell";
-       };
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
   };
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
   # Neovim
   programs.neovim = {
-     enable = true;
-     defaultEditor = true;
+    enable = true;
+    defaultEditor = true;
   };
 
   # File manager
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
-     thunar-archive-plugin
-     thunar-volman
+    thunar-archive-plugin
+    thunar-volman
   ];
- services.gvfs.enable = true; # Mount, trash, and other functionalities
- services.tumbler.enable = true; # Thumbnail support for images
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -111,10 +114,11 @@
   users.users.abhishek = {
     isNormalUser = true;
     description = "abhishek";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
+    extraGroups = [
+      "networkmanager"
+      "wheel"
     ];
+
   };
 
   # Install firefox.
@@ -126,26 +130,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
-     pciutils
-     kitty
-     wofi
-     waybar
-     brightnessctl
-     wl-clipboard
-     fastfetch
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    pciutils
+    kitty
+    wofi
+    waybar
+    brightnessctl
+    wl-clipboard
   ];
 
-  programs.git = {
-    enable = true;
-    config = {
-    user.name  = "Abhishek001konni";
-    user.email = "abhishek001konni@gmail.com";
-    gpg.format = "ssh";
-    };
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -157,8 +152,8 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
-   programs.ssh.startAgent = true;
+  services.openssh.enable = true;
+  programs.ssh.startAgent = true;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
