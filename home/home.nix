@@ -29,6 +29,10 @@
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
+     shellAliases = {
+        vim="nvim";
+     };
+
   };
 
     # Neovim
