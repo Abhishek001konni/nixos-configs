@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     fastfetch
     btop
-    vscodium
     kitty
     wofi
     waybar
@@ -56,7 +55,7 @@
   # vscodium
     programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscode;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
     ];
