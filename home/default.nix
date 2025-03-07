@@ -2,11 +2,11 @@
 
 {
   imports = [
-  ./home.nix
-  ./packages.nix
-  ./zsh.nix
-  ./nvim.nix
-  ./git.nix
-  ./vscode.nix
+    ./home.nix
+    ./packages.nix
+    ./zsh.nix
+    ./nvim.nix
+    ./git.nix
+    ./vscode.nix
   ];
 }

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    #ZSH
+  #ZSH
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -11,9 +11,9 @@
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
-     shellAliases = {
-        vim="nvim";
-     };
+    shellAliases = {
+      vim = "nvim";
+    };
 
   };
 }

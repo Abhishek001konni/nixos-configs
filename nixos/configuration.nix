@@ -9,7 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules
-  ]; 
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -20,7 +20,6 @@
   # };
 
   # List services that you want to enable:
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

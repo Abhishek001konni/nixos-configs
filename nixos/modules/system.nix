@@ -1,21 +1,26 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Time zone.
   time.timeZone = "America/Toronto";
-  
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Experimental Features
-  nix = { 
+  nix = {
     settings = {
-        experimental-features = [
+      experimental-features = [
         "nix-command"
         "flakes"
-        ];
+      ];
     };
-    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -23,7 +28,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Thunar related services 
+  # Thunar related services
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   programs.xfconf.enable = true;

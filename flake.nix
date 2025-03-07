@@ -4,7 +4,7 @@
   inputs = {
     # Stable nixpkgs for the NixOS system
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
-     
+
     # Unstable nixpkgs for user packages
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
@@ -21,31 +21,36 @@
       home-manager,
       ...
     }:
-    let 
-       system = "x86_64-linux";
-       lib = nixpkgs.lib;
-       pkgs = nixpkgs.legacyPackages.${system};
-       pkgs-unstable = import nixpkgs-unstable {
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
         };
+      };
 
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          specialArgs = { pkgs-unstable = pkgs-unstable; };
+          specialArgs = {
+            pkgs-unstable = pkgs-unstable;
+          };
           modules = [
             ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true; 
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.abhishek = import ./home/default.nix;
-	            home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { 
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = {
                 pkgs-unstable = pkgs-unstable;
-                }; # By default HM using pkgs from nixpkgs
+              }; # By default HM using pkgs from nixpkgs
             }
           ];
         };

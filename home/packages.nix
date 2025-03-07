@@ -1,4 +1,9 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   # Packages that should be installed to the user profile.
@@ -13,6 +18,7 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
+    nixfmt-rfc-style
   ];
 
 }
