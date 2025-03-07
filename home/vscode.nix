@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
     ];
   };

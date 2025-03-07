@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     fastfetch
     btop
     kitty
@@ -14,4 +14,5 @@
     xfce.thunar-archive-plugin
     xfce.thunar-volman
   ];
+
 }
