@@ -25,8 +25,11 @@
        system = "x86_64-linux";
        lib = nixpkgs.lib;
        pkgs = nixpkgs.legacyPackages.${system};
-       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-    
+       pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config = { allowUnfree = true; };
+        };
+
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -36,7 +39,7 @@
             ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true; 
+              home-manager.useGlobalPkgs = false; 
               home-manager.useUserPackages = true;
               home-manager.users.abhishek = import ./home/default.nix;
 	            home-manager.backupFileExtension = "backup";

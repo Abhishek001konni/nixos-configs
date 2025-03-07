@@ -3,8 +3,8 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
-    extensions = with pkgs.vscode-extensions; [
+    package = pkgs-unstable.vscode;
+    extensions = with pkgs-unstable.vscode-extensions; [
       vscodevim.vim
     ];
   };
