@@ -12,7 +12,6 @@
     btop
     kitty
     wofi
-    waybar
     brightnessctl
     wl-clipboard
     xfce.thunar

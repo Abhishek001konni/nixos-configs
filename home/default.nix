@@ -9,5 +9,6 @@
     ./git.nix
     ./vscode.nix
     ./hyprland.nix
+    ./hyprpanel.nix
   ];
 }
