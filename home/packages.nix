@@ -19,6 +19,7 @@
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     nixfmt-rfc-style
+    tree
   ];
 
 }

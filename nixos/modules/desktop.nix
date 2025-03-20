@@ -13,14 +13,13 @@
       displayManager = {
         lightdm.enable = true;
       };
+
       desktopManager.xfce.enable = false;
       xkb = {
         layout = "us";
         variant = "";
       };
     };
+    displayManager.sessionPackages = [ pkgs.hyprland ];
   };
-
-  # Hyprland
-  programs.hyprland.enable = true;
 }
