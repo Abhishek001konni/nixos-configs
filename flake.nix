@@ -11,10 +11,10 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel = {
-       url = "github:jas-singhfsu/hyprpanel";
-       inputs.nixpkgs.follows = "nixpkgs-unstable";
-       };
+    hyprpanel = { 
+    url = "github:jas-singhfsu/hyprpanel";
+    inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -48,12 +48,13 @@
             ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
+              home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
               home-manager.users.abhishek = import ./home/default.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 pkgs-unstable = pkgs-unstable;
+		inherit inputs;
               }; # By default HM using pkgs from nixpkgs
             }
           ];

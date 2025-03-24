@@ -22,7 +22,7 @@
       "$mainMod" = "SUPER";
 
       # Autostart
-      "exec-once" = ["hyprpanel"];
+      #"exec-once" = ["hyprpanel"];
 
       # General settings
       general = {
