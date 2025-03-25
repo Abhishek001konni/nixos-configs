@@ -19,6 +19,7 @@
     xfce.thunar-volman
     nixfmt-rfc-style
     tree
+    gcc
   ];
 
 }

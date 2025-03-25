@@ -18,6 +18,7 @@
 
     override = {
       theme.bar.menus.text = "#123ABC";
+      theme.bar.buttons.dashboard.background = "#aadaf2";
     };
 
     layout = {
@@ -42,15 +43,18 @@
         };
         weather.unit = "metric";
       };
-
+      
+      menus.dashboard.shortcuts.left.shortcut1.icon = "󰨞";
+      menus.dashboard.shortcuts.left.shortcut1.command = "code";
+      menus.dashboard.shortcuts.left.shortcut1.tooltip = "VsCode";
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = true;
       menus.clock.weather.location = "Toronto";
       theme.bar.transparent = true;
-
+          
       theme.font = {
         name = "CaskaydiaCove NF";
-        size = "16px";
+        size = "15px";
       };
     };
   };

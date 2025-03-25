@@ -11,10 +11,10 @@
     xserver = {
       enable = true;
       displayManager = {
-        lightdm.enable = true;
+        sddm.enable = true;
+        sddm.wayland.enable = true;
       };
 
-      desktopManager.xfce.enable = false;
       xkb = {
         layout = "us";
         variant = "";
