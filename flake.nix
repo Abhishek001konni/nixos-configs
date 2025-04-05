@@ -7,14 +7,19 @@
 
     # Unstable nixpkgs for user packages
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    
+    # home-manager
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # hyprpanel
     hyprpanel = { 
     url = "github:jas-singhfsu/hyprpanel";
     inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
   };
 
   outputs =
@@ -43,6 +48,7 @@
           inherit system;
           specialArgs = {
             pkgs-unstable = pkgs-unstable;
+            inherit inputs;
           };
           modules = [
             ./nixos/configuration.nix
