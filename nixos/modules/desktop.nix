@@ -10,16 +10,17 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = {
-        sddm.enable = true;
-        sddm.wayland.enable = true;
-      };
-
+      
       xkb = {
         layout = "us";
         variant = "";
       };
     };
-    displayManager.sessionPackages = [ pkgs.hyprland ];
+    displayManager = {
+        sddm.enable = true;
+        sddm.wayland.enable = true;
+        sessionPackages = [ pkgs.hyprland ];
+     };
+
   };
 }
