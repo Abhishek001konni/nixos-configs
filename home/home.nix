@@ -1,8 +1,28 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   home.username = "abhishek";
   home.homeDirectory = "/home/abhishek";
+
+
+  # Cursor
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs-unstable.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
+
+  #Environment variables
+  home.sessionVariables = {
+    XCURSOR_THEME = "Bibata-Modern-Classic";  
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "Bibata-Modern-Classic";
+    HYPRCURSOR_SIZE = "24";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
 
 
   #nix garbage collect

@@ -10,7 +10,6 @@
   home.packages = with pkgs-unstable; [
     fastfetch
     btop
-    kitty
     wofi
     brightnessctl
     wl-clipboard
@@ -20,6 +19,12 @@
     nixfmt-rfc-style
     tree
     gcc
+    wezterm
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.symbols-only
+    bibata-cursors
   ];
 
 }

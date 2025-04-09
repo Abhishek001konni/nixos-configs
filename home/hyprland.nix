@@ -9,7 +9,6 @@
    wayland.windowManager.hyprland = {
    enable = true;
    systemd.enable = true;
-   
    settings = {
    # Monitors
       monitor = ["eDP-1, 1920x1080@60, 0x0, 1"];
@@ -29,16 +28,16 @@
         gaps_in = 4;
         gaps_out = 20;
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(cba6f7ee) rgba(89b4faee) rgba(94e2d5ee) 45deg";
+        "col.inactive_border" = "rgba(1e1e2eaa)";
         resize_on_border = false;
-        allow_tearing = false;
+        allow_tearing = true;
         layout = "dwindle";
       };
 
       # Decoration
       decoration = {
-        rounding = 8;
+        rounding = 6;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = {
@@ -48,10 +47,22 @@
           color = "rgba(1a1a1aee)";
         };
         blur = {
-          enabled = true;
-          size = 3;
-          passes = 1;
-          vibrancy = 0.1696;
+        enabled = true;
+        brightness = 1.0;
+        contrast = 1.0;
+        noise = 0.01;
+
+        ignore_opacity = true;
+        new_optimizations = true;
+        xray = true;
+        vibrancy = 0.2;
+        vibrancy_darkness = 0.5;
+
+        passes = 4;
+        size = 7;
+
+        popups = true;
+        popups_ignorealpha = 0.2;
         };
       };
 
@@ -100,6 +111,9 @@
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
+      };
+      debug = {
+        disable_logs = false;  # Enable full logging
       };
 
       # Input
@@ -192,6 +206,7 @@
         ",XF86AudioPlay, exec, playerctl play-pause"
         ",XF86AudioPrev, exec, playerctl previous"
       ];
+
 
       # Window and workspace rules
       windowrulev2 = [

@@ -54,7 +54,7 @@
             ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = false;
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.abhishek = import ./home/default.nix;
               home-manager.backupFileExtension = "backup";
@@ -63,6 +63,12 @@
 		inherit inputs;
               }; # By default HM using pkgs from nixpkgs
             }
+            #overlays
+              {
+               nixpkgs.overlays = [
+               inputs.hyprpanel.overlay
+               ];
+              }
           ];
         };
       };

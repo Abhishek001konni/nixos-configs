@@ -5,9 +5,9 @@
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
   # Add the HyprPanel overlay
-  nixpkgs.overlays = [
-    inputs.hyprpanel.overlay
-  ];
+  #  nixpkgs.overlays = [
+  #  inputs.hyprpanel.overlay
+   #];
 
  programs.hyprpanel = {
     enable = true;

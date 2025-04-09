@@ -10,5 +10,7 @@
     ./vscode.nix
     ./hyprland.nix
     ./hyprpanel.nix
+    ./kitty.nix
+    ./gtk.nix
   ];
 }

@@ -5,5 +5,6 @@
   fonts.packages = with pkgs; [
     font-awesome
     roboto
+    inter
   ];
 }
