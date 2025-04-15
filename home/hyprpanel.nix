@@ -11,30 +11,32 @@
 
  programs.hyprpanel = {
     enable = true;
-    systemd.enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
-    theme = "catppuccin_mocha_split";
 
     override = {
       theme.bar.menus.text = "#123ABC";
       theme.bar.buttons.dashboard.background = "#aadaf2";
     };
 
-    layout = {
-      "bar.layouts" = {
-        "0" = {
-          left = [ "dashboard" "workspaces" "netstat"];
-          middle = [ "clock" ];
-          right = [ "network" "volume" "systray" "notifications" "power" ];
-        };
-      };
-    };
-
+    
     settings = {
+     layout = {
+        "bar.layouts" = {
+          "0" = {
+            left = [ "dashboard" "workspaces" "netstat" ];
+            middle = [ "clock" ];
+            right = [ "network" "volume" "systray" "notifications" "power" ];
+          };
+        };
+      }; 
+
+      theme.name = "catppuccin_mocha_split";
+
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
       bar.clock.format = "%a %b %d  %I:%M %p";
+      
 
       menus.clock = {
         time = {

@@ -3,21 +3,21 @@
 
   inputs = {
     # Stable nixpkgs for the NixOS system
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # Unstable nixpkgs for user packages
-    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     
     # home-manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # hyprpanel
     hyprpanel = { 
     url = "github:jas-singhfsu/hyprpanel";
-    inputs.nixpkgs.follows = "nixpkgs-unstable";
+    inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -26,7 +26,7 @@
     inputs@{
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      nixpkgs-stable,
       home-manager,
       ...
     }:
@@ -34,10 +34,19 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = import nixpkgs-unstable {
+      # Define pkgs-unstable to point to the same nixpkgs (unstable)
+      pkgs-unstable = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
+        };
+      };
+
+      # Define pkgs-stable for the stable channel
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config = {
+           allowUnfree = true;
         };
       };
 
@@ -48,6 +57,7 @@
           inherit system;
           specialArgs = {
             pkgs-unstable = pkgs-unstable;
+            pkgs-stable = pkgs-stable;
             inherit inputs;
           };
           modules = [
@@ -60,7 +70,8 @@
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 pkgs-unstable = pkgs-unstable;
-		inherit inputs;
+                pkgs-stable = pkgs-stable;
+            		inherit inputs;
               }; # By default HM using pkgs from nixpkgs
             }
             #overlays
