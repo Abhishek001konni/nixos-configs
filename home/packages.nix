@@ -10,7 +10,6 @@
   home.packages = with pkgs-unstable; [
     fastfetch
     btop
-    wofi
     brightnessctl
     wl-clipboard
     xfce.thunar
@@ -25,6 +24,9 @@
     nerd-fonts.caskaydia-cove
     nerd-fonts.symbols-only
     bibata-cursors
+    grim
+    hyprpanel
+    walker
   ];
 
 }

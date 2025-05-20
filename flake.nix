@@ -7,7 +7,7 @@
 
     # Unstable nixpkgs for user packages
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
-    
+
     # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,9 +15,9 @@
     };
 
     # hyprpanel
-    hyprpanel = { 
-    url = "github:jas-singhfsu/hyprpanel";
-    inputs.nixpkgs.follows = "nixpkgs";
+    hyprpanel = {
+      url = "github:jas-singhfsu/hyprpanel";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -36,6 +36,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       # Define pkgs-unstable to point to the same nixpkgs (unstable)
       pkgs-unstable = import nixpkgs {
+        overlays = [ inputs.hyprpanel.overlay ];
         inherit system;
         config = {
           allowUnfree = true;
@@ -46,7 +47,7 @@
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config = {
-           allowUnfree = true;
+          allowUnfree = true;
         };
       };
 
@@ -71,15 +72,15 @@
               home-manager.extraSpecialArgs = {
                 pkgs-unstable = pkgs-unstable;
                 pkgs-stable = pkgs-stable;
-            		inherit inputs;
+                inherit inputs;
               }; # By default HM using pkgs from nixpkgs
             }
             #overlays
-              {
-               nixpkgs.overlays = [
-               inputs.hyprpanel.overlay
-               ];
-              }
+            {
+              nixpkgs.overlays = [
+                inputs.hyprpanel.overlay
+              ];
+            }
           ];
         };
       };

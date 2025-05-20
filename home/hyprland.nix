@@ -6,22 +6,25 @@
 }:
 
 {
-   wayland.windowManager.hyprland = {
-   enable = true;
-   systemd.enable = true;
-   settings = {
-   # Monitors
-      monitor = ["eDP-1, 1920x1080@60, 0x0, 1"];
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      # Monitors
+      monitor = [ "eDP-1, 1920x1080@60, 0x0, 1" ];
 
       # Variables for programs
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
-      "$menu" = "wofi --show drun";
+      "$menu" = "walker";
       "$browser" = "firefox";
       "$mainMod" = "SUPER";
 
       # Autostart
-      #"exec-once" = ["hyprpanel"];
+      "exec-once" = [
+        "hyprpanel"
+        "walker --gapplication-service"
+      ];
 
       # General settings
       general = {
@@ -37,7 +40,7 @@
 
       # Decoration
       decoration = {
-        rounding = 6;
+        rounding = 5;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = {
@@ -47,22 +50,22 @@
           color = "rgba(1a1a1aee)";
         };
         blur = {
-        enabled = true;
-        brightness = 1.0;
-        contrast = 1.0;
-        noise = 0.01;
+          enabled = true;
+          brightness = 1.0;
+          contrast = 1.0;
+          noise = 0.01;
 
-        ignore_opacity = true;
-        new_optimizations = true;
-        xray = true;
-        vibrancy = 0.2;
-        vibrancy_darkness = 0.5;
+          ignore_opacity = true;
+          new_optimizations = true;
+          xray = true;
+          vibrancy = 0.2;
+          vibrancy_darkness = 0.5;
 
-        passes = 4;
-        size = 7;
+          passes = 4;
+          size = 7;
 
-        popups = true;
-        popups_ignorealpha = 0.2;
+          popups = true;
+          popups_ignorealpha = 0.2;
         };
       };
 
@@ -113,7 +116,7 @@
         disable_hyprland_logo = false;
       };
       debug = {
-        disable_logs = false;  # Enable full logging
+        disable_logs = false; # Enable full logging
       };
 
       # Input
@@ -207,12 +210,11 @@
         ",XF86AudioPrev, exec, playerctl previous"
       ];
 
-
       # Window and workspace rules
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
-   };
-   }
+  };
+}

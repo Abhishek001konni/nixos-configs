@@ -1,9 +1,13 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   home.username = "abhishek";
   home.homeDirectory = "/home/abhishek";
-
 
   # Cursor
   home.pointerCursor = {
@@ -16,14 +20,12 @@
 
   #Environment variables
   home.sessionVariables = {
-    XCURSOR_THEME = "Bibata-Modern-Classic";  
+    XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
     HYPRCURSOR_THEME = "Bibata-Modern-Classic";
     HYPRCURSOR_SIZE = "24";
     MOZ_ENABLE_WAYLAND = "1";
   };
-
-
 
   #nix garbage collect
   nix = {
