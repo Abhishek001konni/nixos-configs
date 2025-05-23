@@ -34,7 +34,7 @@
         "col.active_border" = "rgba(cba6f7ee) rgba(89b4faee) rgba(94e2d5ee) 45deg";
         "col.inactive_border" = "rgba(1e1e2eaa)";
         resize_on_border = false;
-        allow_tearing = true;
+        allow_tearing = false;
         layout = "dwindle";
       };
 
@@ -42,9 +42,9 @@
       decoration = {
         rounding = 5;
         active_opacity = 1.0;
-        inactive_opacity = 1.0;
+        inactive_opacity = 0.6;
         shadow = {
-          enabled = true;
+          enabled = false;
           range = 4;
           render_power = 3;
           color = "rgba(1a1a1aee)";
@@ -93,7 +93,7 @@
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 1.94, almostLinear, fade"
+          "workspaces, 1, 3.94, almostLinear, fade"
           "workspacesIn, 1, 1.21, almostLinear, fade"
           "workspacesOut, 1, 1.94, almostLinear, fade"
         ];
@@ -113,10 +113,10 @@
       # Miscellaneous
       misc = {
         force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = true;
       };
       debug = {
-        disable_logs = false; # Enable full logging
+        disable_logs = true; # Enable full logging
       };
 
       # Input
@@ -148,7 +148,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, O, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
+        "$mainMod, SPACE, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"

@@ -27,6 +27,7 @@
     grim
     hyprpanel
     walker
+    brave
   ];
 
 }
