@@ -27,8 +27,8 @@
 
     prime = {
       offload = {
-      enable = true;
-      enableOffloadCmd = true;
+        enable = true;
+        enableOffloadCmd = true;
       };
       amdgpuBusId = "PCI:5:0:0";
       nvidiaBusId = "PCI:1:0:0";
@@ -41,6 +41,18 @@
     xwayland.enable = true;
   };
 
+  # Greetd with TuiGreet
+  services.greetd = {
+    enable = true;
+    vt = 7;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --remember --theme 'border=magenta;text=cyan;prompt=green;time=red;button=yellow;input=white' --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+
   services = {
     xserver = {
       enable = true;
@@ -51,27 +63,27 @@
         variant = "";
       };
 
-      displayManager = {
-        lightdm = {
-          enable = true;
-          greeters = {
-            slick = {
-              enable = true;
-              extraConfig = ''
-              wayland=true
-            '';
-              iconTheme = {
-                name = "Papirus-Dark";
-                package = pkgs.papirus-icon-theme;
-              };
-              cursorTheme = {
-                name = "Bibata-Modern-Ice";
-                package = pkgs.bibata-cursors;
-              };
-            };
-          };
-        };
-      };
+      # displayManager = {
+      #   lightdm = {
+      #     enable = true;
+      #     greeters = {
+      #       slick = {
+      #         enable = true;
+      #         extraConfig = ''
+      #         wayland=true
+      #       '';
+      #         iconTheme = {
+      #           name = "Papirus-Dark";
+      #           package = pkgs.papirus-icon-theme;
+      #         };
+      #         cursorTheme = {
+      #           name = "Bibata-Modern-Ice";
+      #           package = pkgs.bibata-cursors;
+      #         };
+      #       };
+      #     };
+      #   };
+      # };
     };
   };
 
@@ -89,9 +101,9 @@
     libva
     libva-utils
     mesa
+    greetd.tuigreet
   ];
 
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }
-
