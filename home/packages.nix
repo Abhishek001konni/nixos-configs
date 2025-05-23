@@ -28,6 +28,8 @@
     hyprpanel
     walker
     brave
+    nvtopPackages.full
+    mpv
   ];
 
 }
