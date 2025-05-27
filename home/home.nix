@@ -13,17 +13,17 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs-unstable.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
+    package = pkgs-unstable.apple-cursor;
+    name = "macOS";
+    size = 28;
   };
 
   #Environment variables
   home.sessionVariables = {
-    XCURSOR_THEME = "Bibata-Modern-Classic";
-    XCURSOR_SIZE = "24";
-    HYPRCURSOR_THEME = "Bibata-Modern-Classic";
-    HYPRCURSOR_SIZE = "24";
+    XCURSOR_THEME = "macOS";
+    XCURSOR_SIZE = "28";
+    HYPRCURSOR_THEME = "macOS";
+    HYPRCURSOR_SIZE = "28";
     MOZ_ENABLE_WAYLAND = "1";
   };
 

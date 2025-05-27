@@ -27,6 +27,19 @@
     };
   };
 
+  # Environment variables 
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "radeonsi"; # AMD hardware acceleration
+    NIXOS_OZONE_WL = "1"; # Prefer Wayland in apps
+    WLR_NO_HARDWARE_CURSORS = "1"; # Optional: fixes cursor glitches
+  };
+
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Enable pam authentication
+  security.pam.services.hyprlock = { };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

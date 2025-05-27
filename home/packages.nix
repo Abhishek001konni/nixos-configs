@@ -23,7 +23,6 @@
     nerd-fonts.fira-code
     nerd-fonts.caskaydia-cove
     nerd-fonts.symbols-only
-    bibata-cursors
     grim
     hyprpanel
     walker

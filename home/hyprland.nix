@@ -22,6 +22,7 @@
 
       # Autostart
       "exec-once" = [
+        "hyprlock"
         "hyprpanel"
         "walker --gapplication-service"
       ];
@@ -154,6 +155,7 @@
         "$mainMod, J, togglesplit,"
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
+        "$mainMod, L, exec, hyprlock"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"

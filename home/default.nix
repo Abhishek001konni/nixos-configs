@@ -12,5 +12,6 @@
     ./hyprpanel.nix
     ./kitty.nix
     ./gtk.nix
+    ./hyprlock.nix
   ];
 }
