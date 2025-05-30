@@ -10,5 +10,7 @@
     vim
     wget
     pciutils
+    polkit_gnome
+    nautilus
   ];
 }

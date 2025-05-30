@@ -16,5 +16,6 @@
     ./sh.nix
     ./systemPkgs.nix
     ./gpu.nix
+    ./nh.nix
   ];
 }

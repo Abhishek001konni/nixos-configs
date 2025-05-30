@@ -15,7 +15,8 @@
 
       # Variables for programs
       "$terminal" = "kitty";
-      "$fileManager" = "thunar";
+      "$fileManager" = "nautilus";
+      #"$screenshot" = "flameshot gui";
       "$menu" = "walker";
       "$browser" = "firefox";
       "$mainMod" = "SUPER";
@@ -25,6 +26,7 @@
         "hyprlock"
         "hyprpanel"
         "walker --gapplication-service"
+        "copyq --start-server"
       ];
 
       # General settings
@@ -117,7 +119,7 @@
         disable_hyprland_logo = true;
       };
       debug = {
-        disable_logs = true; # Enable full logging
+        disable_logs = false; # Enable full logging
       };
 
       # Input
@@ -156,6 +158,9 @@
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
         "$mainMod, L, exec, hyprlock"
+        ''$mainMod, S, exec, grim -g "$(slurp)" - | swappy -f -''
+        "$mainMod, C, exec, copyq menu"
+
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
@@ -184,8 +189,8 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod SHIFT, S, togglespecialworkspace, magic"
+        "$mainMod CTRL SHIFT, S, movetoworkspace, special:magic"
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
@@ -216,6 +221,7 @@
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "float,class:^(com\\.github\\.hluk\\.copyq)$"
       ];
     };
   };

@@ -1,0 +1,4 @@
+[
+  (import ./flameshot.nix)
+]
+

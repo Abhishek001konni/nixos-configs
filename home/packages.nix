@@ -12,23 +12,28 @@
     btop
     brightnessctl
     wl-clipboard
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-volman
     nixfmt-rfc-style
     tree
     gcc
+    unzip
+    jq
+    ripgrep
     wezterm
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.caskaydia-cove
     nerd-fonts.symbols-only
     grim
+    slurp
+    swappy
     hyprpanel
     walker
     brave
     nvtopPackages.full
     mpv
+    copyq
+    flameshot
+    swayimg
   ];
 
 }

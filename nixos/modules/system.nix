@@ -40,16 +40,50 @@
   # Enable pam authentication
   security.pam.services.hyprlock = { };
 
+  # Enable Polkit
+  security.polkit.enable = true;
+
+  # Enable polkit_gnome
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+  description = "polkit-gnome-authentication-agent-1";
+  wants = [ "graphical-session.target" ];
+  wantedBy = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+
+  serviceConfig = {
+    Type = "simple";
+    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    Restart = "on-failure";
+    RestartSec = 1;
+    TimeoutStopSec = 10;
+  };
+};
+
+
+  # Enable D-Bus
+  services.dbus.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Nautilus
+  programs.nautilus-open-any-terminal = {
+  enable = true;
+  terminal = "kitty";
+  };
+
   # Thunar related services
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [ xfce.thunar-volman  xfce.thunar-archive-plugin];
+  };
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   programs.xfconf.enable = true;
+  services.udisks2.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

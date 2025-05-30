@@ -34,9 +34,10 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      homeOverlays = import ./home/overlays;
       # Define pkgs-unstable to point to the same nixpkgs (unstable)
       pkgs-unstable = import nixpkgs {
-        overlays = [ inputs.hyprpanel.overlay ];
+        overlays = [ inputs.hyprpanel.overlay ] ++ homeOverlays;
         inherit system;
         config = {
           allowUnfree = true;
