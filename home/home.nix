@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -13,7 +12,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs-unstable.apple-cursor;
+    package = pkgs.apple-cursor;
     name = "macOS";
     size = 28;
   };
@@ -36,7 +35,7 @@
     };
   };
 
-    # This value determines the Home Manager release that your
+  # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
   # incompatible changes.

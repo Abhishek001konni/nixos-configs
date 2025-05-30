@@ -2,11 +2,11 @@
   description = "A very basic flake";
 
   inputs = {
-    # Stable nixpkgs for the NixOS system
+    # UnStable nixpkgs for the NixOS system
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # Unstable nixpkgs for user packages
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    # Optional stable nixpkgs
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
     # home-manager
     home-manager = {
@@ -28,23 +28,26 @@
       nixpkgs,
       nixpkgs-stable,
       home-manager,
+      hyprpanel,
       ...
     }:
     let
       system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-      homeOverlays = import ./home/overlays;
-      # Define pkgs-unstable to point to the same nixpkgs (unstable)
-      pkgs-unstable = import nixpkgs {
-        overlays = [ inputs.hyprpanel.overlay ] ++ homeOverlays;
+      username = "abhishek";
+
+      # Custom Overlays
+      overlays = import ./home/overlays { inherit inputs; };
+
+      # Main package set (unstable)
+      pkgs = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
         };
+        overlays = overlays;
       };
 
-      # Define pkgs-stable for the stable channel
+      # Stable package set for fallback
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config = {
@@ -55,32 +58,24 @@
     in
     {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        nixos = pkgs.lib.nixosSystem {
           inherit system;
+
           specialArgs = {
-            pkgs-unstable = pkgs-unstable;
-            pkgs-stable = pkgs-stable;
-            inherit inputs;
+            inherit inputs pkgs-stable;
           };
+
           modules = [
             ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.abhishek = import ./home/default.nix;
+              home-manager.users.${username} = import ./home/default.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
-                pkgs-unstable = pkgs-unstable;
-                pkgs-stable = pkgs-stable;
-                inherit inputs;
-              }; # By default HM using pkgs from nixpkgs
-            }
-            #overlays
-            {
-              nixpkgs.overlays = [
-                inputs.hyprpanel.overlay
-              ];
+                inherit inputs pkgs-stable;
+              };
             }
           ];
         };

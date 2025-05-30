@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -160,7 +159,6 @@
         "$mainMod, L, exec, hyprlock"
         ''$mainMod, S, exec, grim -g "$(slurp)" - | swappy -f -''
         "$mainMod, C, exec, copyq menu"
-
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"

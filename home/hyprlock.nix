@@ -1,13 +1,12 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 {
   programs.hyprlock = {
     enable = true;
-    package = pkgs-unstable.hyprlock;
+    package = pkgs.hyprlock;
     settings = {
       "$font" = "JetBrainsMono Nerd Font";
       general = {

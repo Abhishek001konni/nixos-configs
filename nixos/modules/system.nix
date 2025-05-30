@@ -27,7 +27,7 @@
     };
   };
 
-  # Environment variables 
+  # Environment variables
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "radeonsi"; # AMD hardware acceleration
     NIXOS_OZONE_WL = "1"; # Prefer Wayland in apps
@@ -45,40 +45,39 @@
 
   # Enable polkit_gnome
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
-  description = "polkit-gnome-authentication-agent-1";
-  wants = [ "graphical-session.target" ];
-  wantedBy = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
+    description = "polkit-gnome-authentication-agent-1";
+    wants = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
 
-  serviceConfig = {
-    Type = "simple";
-    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-    Restart = "on-failure";
-    RestartSec = 1;
-    TimeoutStopSec = 10;
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
   };
-};
-
 
   # Enable D-Bus
   services.dbus.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Nautilus
   programs.nautilus-open-any-terminal = {
-  enable = true;
-  terminal = "kitty";
+    enable = true;
+    terminal = "kitty";
   };
 
   # Thunar related services
   programs.thunar = {
     enable = true;
-    plugins = with pkgs; [ xfce.thunar-volman  xfce.thunar-archive-plugin];
+    plugins = with pkgs; [
+      xfce.thunar-volman
+      xfce.thunar-archive-plugin
+    ];
   };
   services.gvfs.enable = true;
   services.tumbler.enable = true;

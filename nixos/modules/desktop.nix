@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -13,7 +12,7 @@
     xwayland.enable = true;
   };
 
-  # Greetd 
+  # Greetd
   services.greetd = {
     enable = true;
     vt = 7;
@@ -29,7 +28,7 @@
     Type = "idle";
     StandardInput = "tty";
     StandardOutput = "tty";
-    StandardError = "journal"; 
+    StandardError = "journal";
     TTYReset = true;
     TTYVHangup = true;
     TTYVTDisallocate = true;

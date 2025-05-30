@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -11,11 +10,11 @@
     font.name = "Inter 10";
     theme = {
       name = "catppuccin-frappe-blue-standard";
-      package = pkgs-unstable.catppuccin-gtk;
+      package = pkgs.catppuccin-gtk;
     };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs-unstable.papirus-icon-theme;
+      package = pkgs.papirus-icon-theme;
     };
 
     gtk3.extraConfig = {

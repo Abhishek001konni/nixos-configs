@@ -1,13 +1,12 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
 {
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     fastfetch
     btop
     brightnessctl
@@ -34,6 +33,8 @@
     copyq
     flameshot
     swayimg
+    file-roller
+    materialgram
   ];
 
 }

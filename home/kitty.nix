@@ -1,14 +1,13 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
 {
   programs.kitty = {
     enable = true;
-    package = pkgs-unstable.kitty;
+    package = pkgs.kitty;
     settings = {
       dynamic_background_opacity = true;
       background_opacity = "0.5";
