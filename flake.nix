@@ -38,7 +38,7 @@
       # Custom Overlays
       overlays = import ./home/overlays { inherit inputs; };
 
-      # Main package set (unstable)
+      # Main package set with overlays
       pkgs = import nixpkgs {
         inherit system;
         config = {
@@ -47,7 +47,7 @@
         overlays = overlays;
       };
 
-      # Stable package set for fallback
+      # Stable package for fallback
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config = {
@@ -58,8 +58,9 @@
     in
     {
       nixosConfigurations = {
-        nixos = pkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           inherit system;
+          pkgs = pkgs;
 
           specialArgs = {
             inherit inputs pkgs-stable;
@@ -74,7 +75,8 @@
               home-manager.users.${username} = import ./home/default.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-stable;
+                pkgs-stable = pkgs-stable;
+                inherit inputs;
               };
             }
           ];

@@ -27,6 +27,9 @@
     };
   };
 
+  # Allow unfree packages
+  # nixpkgs.config.allowUnfree = true;
+
   # Environment variables
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "radeonsi"; # AMD hardware acceleration
