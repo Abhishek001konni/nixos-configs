@@ -13,5 +13,6 @@
     ./kitty.nix
     ./gtk.nix
     ./hyprlock.nix
+    ./fastfetch.nix
   ];
 }
