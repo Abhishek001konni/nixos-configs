@@ -63,7 +63,7 @@
           pkgs = pkgs;
 
           specialArgs = {
-            inherit inputs pkgs-stable;
+            inherit inputs pkgs-stable username;
           };
 
           modules = [
@@ -76,7 +76,7 @@
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 pkgs-stable = pkgs-stable;
-                inherit inputs;
+                inherit inputs username;
               };
             }
           ];

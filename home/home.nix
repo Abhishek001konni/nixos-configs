@@ -1,12 +1,13 @@
 {
   config,
   pkgs,
+  username,
   ...
 }:
 
 {
-  home.username = "abhishek";
-  home.homeDirectory = "/home/abhishek";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   # Cursor
   home.pointerCursor = {

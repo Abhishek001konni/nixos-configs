@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  username,
   ...
 }:
 
@@ -19,7 +20,7 @@
     settings = {
       default_session = {
         command = "Hyprland";
-        user = "abhishek";
+        user = username;
       };
     };
   };

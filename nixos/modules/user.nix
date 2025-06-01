@@ -1,10 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   # Define user account
-  users.users.abhishek = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "abhishek";
+    description = username;
     extraGroups = [
       "networkmanager"
       "wheel"
