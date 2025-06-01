@@ -531,5 +531,8 @@
   "theme.osd.enable": true,
   "menus.dashboard.stats.enable_gpu": true,
   "bar.customModules.microphone.label": true,
-  "theme.bar.buttons.modules.microphone.enableBorder": false
+  "theme.bar.buttons.modules.microphone.enableBorder": false,
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
