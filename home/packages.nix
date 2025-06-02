@@ -13,6 +13,7 @@
     nixfmt-rfc-style
     tree
     gcc
+    libnotify
     unzip
     jq
     ripgrep
@@ -24,14 +25,15 @@
     grim
     slurp
     swappy
-    hyprpanel
+    loupe
+    hyprpaper
+    #hyprpanel
     walker
     brave
     nvtopPackages.full
     mpv
     copyq
     flameshot
-    swayimg
     file-roller
     materialgram
   ];

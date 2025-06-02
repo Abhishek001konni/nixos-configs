@@ -23,7 +23,9 @@
       # Autostart
       "exec-once" = [
         "hyprlock"
-        "hyprpanel"
+        "hyprpaper"
+        "waybar"
+        #"hyprpanel"
         "walker --gapplication-service"
         "copyq --start-server"
       ];

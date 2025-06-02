@@ -28,7 +28,7 @@
     };
   };
 
-  # Allow unfree packages
+  # Allow unfree packages (enabled in pkgs set)
   # nixpkgs.config.allowUnfree = true;
 
   # Environment variables
@@ -63,8 +63,15 @@
     };
   };
 
+  # Enable bluetooth and blueman
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Enable D-Bus
   services.dbus.enable = true;
+
+  # Enable power profiles daemon
+  services.power-profiles-daemon.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

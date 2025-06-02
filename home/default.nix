@@ -9,10 +9,12 @@
     ./git.nix
     ./vscode.nix
     ./hyprland.nix
-    ./hyprpanel.nix
+    #./hyprpanel.nix
     ./kitty.nix
     ./gtk.nix
     ./hyprlock.nix
     ./fastfetch.nix
+    ./waybar.nix
+    ./swaync.nix
   ];
 }
