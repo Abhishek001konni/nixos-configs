@@ -26,7 +26,6 @@
     slurp
     swappy
     loupe
-    hyprpaper
     #hyprpanel
     walker
     brave

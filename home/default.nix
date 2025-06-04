@@ -16,5 +16,6 @@
     ./fastfetch.nix
     ./waybar.nix
     ./swaync.nix
+    ./hyprpaper.nix
   ];
 }
