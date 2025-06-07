@@ -168,7 +168,7 @@
         };
 
         image = {
-          path = "/home/abhishek/.config/waybar/nix.svg";
+          path = "${config.home.homeDirectory}/nixos-configs/dotfiles/assets/nix.svg";
           size = 20;
           on-click = "walker";
         };
