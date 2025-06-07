@@ -39,7 +39,7 @@
   };
 
   # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_6_14; # Switch to 6.14 for now
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable pam authentication
   security.pam.services.hyprlock = { };
