@@ -139,7 +139,7 @@
           ];
           tooltip-format = "{volume}% volume";
           on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
-          on-scroll-up = "wpctl get-volume @DEFAULT_SINK@ | awk '{if ($2 >= 1.0) print \"wpctl set-volume @DEFAULT_SINK@ 1.0\"; else print \"wpctl set-volume @DEFAULT_SINK@ 5%+\"}' | sh";
+          on-scroll-up = "wpctl set-volume -l 1.5 @DEFAULT_SINK@ 10%+";
           on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 10%-";
         };
 
