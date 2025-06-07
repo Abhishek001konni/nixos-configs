@@ -24,7 +24,6 @@
       "exec-once" = [
         "hyprlock"
         "hyprpaper"
-        "waybar"
         #"hyprpanel"
         "walker --gapplication-service"
         "copyq --start-server"
@@ -32,8 +31,8 @@
 
       # General settings
       general = {
-        gaps_in = 4;
-        gaps_out = 20;
+        gaps_in = 2;
+        gaps_out = 15;
         border_size = 2;
         "col.active_border" = "rgba(cba6f7ee) rgba(89b4faee) rgba(94e2d5ee) 45deg";
         "col.inactive_border" = "rgba(1e1e2eaa)";

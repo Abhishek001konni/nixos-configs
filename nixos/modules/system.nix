@@ -82,18 +82,20 @@
     terminal = "kitty";
   };
 
-  # Thunar related services
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [
-      xfce.thunar-volman
-      xfce.thunar-archive-plugin
-    ];
-  };
+  # Shared services
   services.gvfs.enable = true;
   services.tumbler.enable = true;
-  programs.xfconf.enable = true;
+  #programs.xfconf.enable = true;
   services.udisks2.enable = true;
+
+  # Thunar related services
+  # programs.thunar = {
+  #   enable = true;
+  #   plugins = with pkgs; [
+  #     xfce.thunar-volman
+  #     xfce.thunar-archive-plugin
+  #   ];
+  # };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

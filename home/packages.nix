@@ -7,34 +7,51 @@
 {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    #System Utilities
     btop
     brightnessctl
-    wl-clipboard
-    nixfmt-rfc-style
-    tree
     gcc
-    libnotify
-    unzip
     jq
+    libnotify
+    nvtopPackages.full
     ripgrep
-    wezterm
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.symbols-only
+    tree
+    unzip
+
+    #Clipboard/Screenshots
+    copyq
+    flameshot
     grim
     slurp
     swappy
+    wl-clipboard
+
+    #Fonts
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+
+    #File Management
+    file-roller
     loupe
+
+    #Social
+    materialgram
+
+    #Networking
+    brave
+    networkmanagerapplet
+
+    #Media
+    mpv
+
+    #Terminal/Editor
+    nixfmt-rfc-style
+    wezterm
+
+    #Wayland/Hyprland Utilities
     #hyprpanel
     walker
-    brave
-    nvtopPackages.full
-    mpv
-    copyq
-    flameshot
-    file-roller
-    materialgram
   ];
-
 }
