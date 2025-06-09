@@ -125,6 +125,7 @@
           tooltip-format = "Connected to {essid}";
           tooltip-format-ethernet = "{ifname} ";
           on-click = "hyprctl dispatch exec '[float] nm-connection-editor'";
+          on-click-right = "hyprctl dispatch exec nm-applet";
         };
 
         pulseaudio = {
