@@ -17,5 +17,7 @@
     ./waybar.nix
     ./swaync.nix
     ./hyprpaper.nix
+    ./rofi-screenshot.nix
+    ./rofi-powermenu.nix
   ];
 }

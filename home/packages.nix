@@ -54,5 +54,6 @@
     #Wayland/Hyprland Utilities
     #hyprpanel
     walker
+    rofi-wayland
   ];
 }

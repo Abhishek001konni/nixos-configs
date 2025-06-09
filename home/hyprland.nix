@@ -158,8 +158,9 @@
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
         "$mainMod, L, exec, hyprlock"
-        ''$mainMod, S, exec, grim -g "$(slurp)" - | swappy -f -''
+        "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq menu"
+        "$mainMod, X, exec, rofi-powermenu-script"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
