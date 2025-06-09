@@ -45,6 +45,7 @@
 
     #Media
     mpv
+    obs-studio
 
     #Terminal/Editor
     nixfmt-rfc-style
