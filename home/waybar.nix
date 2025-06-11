@@ -36,8 +36,38 @@
 
         "hyprland/window" = {
           format = "{class}";
-          icon = true;
-          "seperate-outputs" = false;
+          icon = false;
+          separate-outputs = false;
+          rewrite = {
+            "kitty" =
+              "<span color='#cba6f7' size='large'>󰄛</span> <span color='#cba6f7' size='10240' rise='1536'>Kitty</span>";
+            "firefox" =
+              "<span color='#f5a97f' size='large'>󰈹</span> <span color='#f5a97f' size='10240' rise='1024'>Firefox</span>";
+            "brave-browser" =
+              "<span color='#eed49f' size='medium'></span> <span color='#eed49f' size='10240' rise='0'>Brave</span>";
+            "org.gnome.Nautilus" =
+              "<span color='#89dceb' size='medium'></span> <span color='#89dceb' size='10240' rise='-512'>Files</span>";
+            "org.gnome.Loupe" =
+              "<span color='#a6e3a1' size='large'></span> <span size='10240' rise='1024'> Image Viewer</span>";
+            "io.github.kukuruzka165.materialgram" =
+              "<span color='#74c7ec' size='large'></span> <span size='10240' rise='1536'>Telegram</span>";
+            "code" =
+              "<span color='#04a5e5' size='large'>󰨞</span> <span size='10240' rise='1024'>VS Code</span>";
+            "org.gnome.FileRoller" =
+              "<span color='#f9e2af' size='large'></span> <span color='#f9e2af' size='10240' rise='1024'> Archive Manager</span>";
+            "com.obsproject.Studio" =
+              "<span color='#f5e0dc' size='large'></span> <span color='#f5e0dc' size='10240' rise='1024'> OBS Studio</span>";
+            "com.github.hluk.copyq" =
+              "<span color='#94e2d5' size='large'></span> <span color='#94e2d5' size='10240' rise='1024'>Copyq</span>";
+            "org.wezfurlong.wezterm" =
+              "<span color='#94e2d5' size='large'></span> <span color='#94e2d5' size='10240' rise='1024'>WezTerm</span>";
+            "mpv" =
+              "<span color='#c6a0f6' size='large'>󰥠</span> <span color='#f4dbd6' size='10240' rise='1024'>MPV</span>";
+            "flameshot" =
+              "<span color='#ca9ee6' size='medium'>󰹑</span> <span color='#ca9ee6' size='10240' rise='0'>Flameshot</span>";
+            "MainPicker" =
+              "<span color='#ff6b6b' size='large'>󰏘</span> <span size='10240' rise='1024'>Color Picker</span>";
+          };
         };
 
         "hyprland/workspaces" = {
@@ -311,7 +341,7 @@
       #window {
         background-color: @crust;
         border-radius: 5px;
-        padding: 0 6px;
+        padding: 0 9px;
         margin: 4px 3px;
       }
       #image {
