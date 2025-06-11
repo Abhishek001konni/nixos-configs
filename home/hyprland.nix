@@ -8,6 +8,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
+    plugins = [
+      pkgs.hyprlandPlugins.hyprspace
+    ];
     settings = {
       # Monitors
       monitor = [ "eDP-1, 1920x1080@60, 0x0, 1" ];
@@ -161,6 +164,7 @@
         "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq menu"
         "$mainMod, X, exec, rofi-powermenu-script"
+        "$mainMod, TAB, overview:toggle"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
