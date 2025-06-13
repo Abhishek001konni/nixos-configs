@@ -43,7 +43,7 @@
       username = "abhishek";
 
       # Custom Overlays
-      overlays = import ./home/overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs; };
 
       # Main package set with overlays
       pkgs = import nixpkgs {
