@@ -37,6 +37,7 @@
         "hyprland/window" = {
           format = "{class}";
           icon = false;
+          tooltip = false;
           separate-outputs = false;
           rewrite = {
             "kitty" =

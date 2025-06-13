@@ -45,7 +45,7 @@
         border_size = 2;
         "col.active_border" = "rgba(cba6f7ee) rgba(89b4faee) rgba(94e2d5ee) 45deg";
         "col.inactive_border" = "rgba(1e1e2eaa)";
-        resize_on_border = false;
+        resize_on_border = true;
         allow_tearing = false;
         layout = "dwindle";
       };
@@ -53,6 +53,7 @@
       # Decoration
       decoration = {
         rounding = 5;
+        rounding_power = 4.0;
         active_opacity = 1.0;
         inactive_opacity = 0.6;
         shadow = {
@@ -128,7 +129,7 @@
         disable_hyprland_logo = true;
       };
       debug = {
-        disable_logs = false; # Enable full logging
+        disable_logs = true; # Enable full logging
       };
 
       # Input
@@ -143,7 +144,7 @@
 
       # Gestures
       gestures = {
-        workspace_swipe = false;
+        workspace_swipe = true;
       };
 
       # Per-device input config
