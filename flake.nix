@@ -14,6 +14,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
+    hyprland = {
+      url = "github:hyprwm/Hyprland/v0.49.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hyprpanel
     hyprpanel = {
       url = "github:jas-singhfsu/hyprpanel";
@@ -29,6 +35,7 @@
       nixpkgs-stable,
       home-manager,
       hyprpanel,
+      hyprland,
       ...
     }:
     let

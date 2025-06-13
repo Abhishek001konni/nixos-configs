@@ -17,5 +17,6 @@
     ./systemPkgs.nix
     ./gpu.nix
     ./nh.nix
+    ./substituters.nix
   ];
 }

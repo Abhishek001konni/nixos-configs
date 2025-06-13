@@ -1,10 +1,16 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 
 {
+  # Import Hyprland Home Manager module
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;

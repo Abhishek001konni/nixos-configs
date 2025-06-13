@@ -3,10 +3,16 @@
   lib,
   pkgs,
   username,
+  inputs,
   ...
 }:
 
 {
+  # Import Hyprland NixOS module
+  imports = [
+    inputs.hyprland.nixosModules.default
+  ];
+
   # Hyprland (Wayland) setup
   programs.hyprland = {
     enable = true;
