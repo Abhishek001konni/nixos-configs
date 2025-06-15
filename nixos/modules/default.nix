@@ -18,5 +18,6 @@
     ./gpu.nix
     ./nh.nix
     ./substituters.nix
+    ./docker.nix
   ];
 }

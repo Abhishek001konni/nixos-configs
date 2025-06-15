@@ -10,7 +10,9 @@
     #System Utilities
     btop
     brightnessctl
+    docker-compose
     gcc
+    gnumake
     jq
     libnotify
     nvtopPackages.full
