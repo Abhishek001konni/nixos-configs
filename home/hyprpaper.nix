@@ -4,7 +4,7 @@
   ...
 }:
 let
-  wallpaper = "~/nixos-configs/dotfiles/assets/wallpaper.jpg";
+  wallpaper = toString ../dotfiles/assets/wallpaper.jpg;
 in
 {
   services.hyprpaper = {
