@@ -2,12 +2,13 @@
   config,
   pkgs,
   username,
+  inputs,
   ...
 }:
 
 {
   programs.nh = {
     enable = true;
-    flake = "/home/${username}/nixos-configs";
+    flake = "${inputs.self.outPath}";
   };
 }
