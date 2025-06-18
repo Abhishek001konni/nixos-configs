@@ -10,7 +10,7 @@
       };
 
       logo = {
-        source = "~/nixos-configs/dotfiles/assets/nixos.png";
+        source = toString ./../dotfiles/assets/nixos.png;
         type = "kitty-direct";
         height = 15;
         width = 25;
