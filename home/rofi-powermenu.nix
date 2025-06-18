@@ -12,7 +12,7 @@ let
     }
 
     window {
-        background-color: rgba(30, 30, 46, 0.9);
+        background-color: rgba(30, 30, 46, 0.5);
         border: 2px solid;
         border-color: rgba(139, 180, 250, 0.5);
         border-radius: 8px;
