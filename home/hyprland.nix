@@ -164,19 +164,20 @@
         "$mainMod, SPACE, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, V, togglesplit,"
+        "$mainMod, G, togglegroup,"
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
-        "$mainMod, L, exec, hyprlock"
+        "$mainMod SHIFT, L, exec, hyprlock"
         "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq menu"
         "$mainMod, X, exec, rofi-powermenu-script"
         "$mainMod, TAB, overview:toggle"
 
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -205,6 +206,13 @@
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+      ];
+
+      binde = [
+        "ALT, h, resizeactive, -20 0"
+        "ALT, l, resizeactive, 20 0"
+        "ALT, k, resizeactive, 0 -20"
+        "ALT, j, resizeactive, 0 20"
       ];
 
       bindm = [
