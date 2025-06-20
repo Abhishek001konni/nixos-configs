@@ -21,6 +21,12 @@
       # Monitors
       monitor = [ "eDP-1, 1920x1080@60, 0x0, 1" ];
 
+      # environment variables
+      env = [
+        "QT_QPA_PLATFORMTHEME,qt5ct"
+        "GTK_THEME,catppuccin-mocha-blue-standard"
+      ];
+
       # Variables for programs
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";

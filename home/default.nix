@@ -19,5 +19,6 @@
     ./hyprpaper.nix
     ./rofi-screenshot.nix
     ./rofi-powermenu.nix
+    ./qt.nix
   ];
 }

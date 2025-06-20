@@ -34,6 +34,9 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
 
+    #Theming
+    papirus-icon-theme
+
     #File Management
     file-roller
     loupe
