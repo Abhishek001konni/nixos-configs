@@ -20,5 +20,6 @@
     ./rofi-screenshot.nix
     ./rofi-powermenu.nix
     ./qt.nix
+    ./xdg.nix
   ];
 }

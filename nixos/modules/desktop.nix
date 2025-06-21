@@ -19,6 +19,12 @@
     xwayland.enable = true;
   };
 
+  # XDG
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
+
   # Greetd
   services.greetd = {
     enable = true;
