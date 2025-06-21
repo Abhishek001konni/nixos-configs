@@ -174,6 +174,7 @@
         "$mainMod, G, togglegroup,"
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
+        "$mainMod, E, exec, brave"
         "$mainMod SHIFT, L, exec, hyprlock"
         "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq menu"
@@ -253,6 +254,12 @@
         "blur, rofi"
         "ignorezero, rofi"
         "ignorealpha 0.2, rofi"
+        "blur,notifications"
+        "ignorezero,notifications"
+        "blur,swaync-notification-window"
+        "ignorezero,swaync-notification-window"
+        "blur,swaync-control-center"
+        "ignorezero,swaync-control-center"
       ];
     };
   };

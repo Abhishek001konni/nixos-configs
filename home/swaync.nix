@@ -186,7 +186,6 @@ in
       .notification {
         border: none;
         box-shadow: none;
-        /* margin: 0px; */
         /* margin: -15px -10px -15px -10px; */
         border-radius: 4px;
         background: inherit;
@@ -294,10 +293,9 @@ in
       /* Control center */
 
       .control-center {
-        background: alpha(@crust, .90);
-        border-radius: 5px;
+        background: alpha(@crust, .5);
+        border-radius: 10px;
         border: 0px solid @selected;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.80);
         margin: 10px;
         padding: 4px;
       }
