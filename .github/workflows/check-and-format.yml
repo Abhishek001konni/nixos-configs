@@ -1,0 +1,66 @@
+name: Flake Check and Auto Format
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  flake-check:
+    name: Nix Flake Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Check flake
+        run: |
+          echo "Running flake check..."
+          if ! nix flake check --show-trace; then
+            echo "Flake check failed"
+            exit 1
+          fi
+          echo "Flake check passed"
+
+      - name: Show flake info
+        run: |
+          echo "Flake metadata:"
+          nix flake metadata
+          echo "Flake outputs:"
+          nix flake show
+
+  auto-format:
+    name: Nix Auto Format
+    runs-on: ubuntu-latest
+    needs: flake-check
+    if: ${{ needs.flake-check.result == 'success' }}
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Format Nix code
+        run: nix fmt 
+
+      - name: Auto commit formatted code
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore: auto-format Nix code [skip ci]"
+          file_pattern: "**/*.nix"
+          disable_globbing: true
