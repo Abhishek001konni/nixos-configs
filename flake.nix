@@ -20,12 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprpanel
-    hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
   outputs =
@@ -34,7 +28,6 @@
       nixpkgs,
       nixpkgs-stable,
       home-manager,
-      hyprpanel,
       hyprland,
       ...
     }:

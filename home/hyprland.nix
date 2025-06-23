@@ -39,7 +39,6 @@
       "exec-once" = [
         "hyprlock"
         "hyprpaper"
-        #"hyprpanel"
         "walker --gapplication-service"
         "copyq --start-server"
       ];
