@@ -66,7 +66,7 @@
               "<span color='#c6a0f6' size='large'>󰥠</span> <span color='#f4dbd6' size='10240' rise='1024'>MPV</span>";
             "flameshot" =
               "<span color='#ca9ee6' size='medium'>󰹑</span> <span color='#ca9ee6' size='10240' rise='0'>Flameshot</span>";
-            "polkit-gnome-authentication-agent-1" = 
+            "polkit-gnome-authentication-agent-1" =
               "<span color='#89b4fa' size='medium'></span> <span color='#89b4fa' size='10240' rise='0'>Polkit Agent</span>";
             "MainPicker" =
               "<span color='#ff6b6b' size='large'>󰏘</span> <span size='10240' rise='1024'>Color Picker</span>";
