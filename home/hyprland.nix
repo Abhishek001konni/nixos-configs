@@ -60,7 +60,7 @@
         rounding = 5;
         rounding_power = 4.0;
         active_opacity = 1.0;
-        inactive_opacity = 0.6;
+        inactive_opacity = 0.7;
         shadow = {
           enabled = false;
           range = 4;
@@ -88,34 +88,52 @@
       };
 
       # Animations
-      animations = {
-        enabled = true;
-        bezier = [
-          "easeOutQuint,0.23,1,0.32,1"
-          "easeInOutCubic,0.65,0.05,0.36,1"
-          "linear,0,0,1,1"
-          "almostLinear,0.5,0.5,0.75,1.0"
-          "quick,0.15,0,0.1,1"
-        ];
-        animation = [
-          "global, 1, 10, default"
-          "border, 1, 5.39, easeOutQuint"
-          "windows, 1, 4.79, easeOutQuint"
-          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-          "windowsOut, 1, 1.49, linear, popin 87%"
-          "fadeIn, 1, 1.73, almostLinear"
-          "fadeOut, 1, 1.46, almostLinear"
-          "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutQuint"
-          "layersIn, 1, 4, easeOutQuint, fade"
-          "layersOut, 1, 1.5, linear, fade"
-          "fadeLayersIn, 1, 1.79, almostLinear"
-          "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 3.94, almostLinear, fade"
-          "workspacesIn, 1, 1.21, almostLinear, fade"
-          "workspacesOut, 1, 1.94, almostLinear, fade"
-        ];
-      };
+animations = {
+  enabled = true;
+  
+  bezier = [
+    "md3_standard, 0.2, 0, 0, 1.0"
+    "md3_decel, 0.05, 0.7, 0.1, 1"
+    "md3_accel, 0.3, 0, 0.8, 0.15"
+    
+    "overshot, 0.05, 0.9, 0.1, 1.05"
+    "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+    "wind, 0.05, 0.9, 0.1, 1.05"
+    
+    "winIn, 0.1, 1.1, 0.1, 1.1"
+    "winOut, 0.3, -0.3, 0, 1"
+    
+    "liner, 1, 1, 1, 1"
+    "easeInOutCirc, 0.85, 0, 0.15, 1"
+    "easeOutCirc, 0, 0.55, 0.45, 1"
+    "easeOutExpo, 0.16, 1, 0.3, 1"
+  ];
+  
+  animation = [
+    "border, 1, 10, default"
+    "borderangle, 1, 8, default"
+    
+    "windows, 1, 7, wind, slide"
+    "windowsIn, 1, 6, winIn, slide"
+    "windowsOut, 1, 5, winOut, slide"
+    "windowsMove, 1, 6, wind, slide"
+    
+    "fade, 1, 7, md3_decel"
+    "fadeIn, 1, 7, md3_decel"
+    "fadeOut, 1, 3, md3_accel"
+    
+    "layers, 1, 4, wind"
+    "layersIn, 1, 3, winIn, slide"
+    "layersOut, 1, 3, winOut"
+    "fadeLayersIn, 1, 4, wind"
+    "fadeLayersOut, 1, 2, md3_accel"
+    
+    "workspaces, 1, 6, overshot, slide"
+    "workspacesIn, 1, 6, overshot, slide"
+    "workspacesOut, 1, 6, overshot, slide"
+    "specialWorkspace, 1, 6, md3_decel, slide"
+  ];
+};
 
       # Dwindle layout
       dwindle = {
@@ -130,7 +148,7 @@
 
       # Miscellaneous
       misc = {
-        force_default_wallpaper = -1;
+        force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
       debug = {
@@ -160,6 +178,10 @@
         }
       ];
 
+      binds = {
+        allow_workspace_cycles = true;
+      };
+
       # Keybindings
       bind = [
         "$mainMod, Return, exec, $terminal"
@@ -174,16 +196,23 @@
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
         "$mainMod, E, exec, brave"
-        "$mainMod SHIFT, L, exec, hyprlock"
+        "$mainMod CTRL, L, exec, hyprlock"
         "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq menu"
         "$mainMod, X, exec, rofi-powermenu-script"
         "$mainMod, TAB, overview:toggle"
 
+        "ALT, Tab, workspace, previous"
+
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
         "$mainMod, k, movefocus, u"
         "$mainMod, j, movefocus, d"
+        
+        "$mainMod SHIFT, h, movewindow, l"
+        "$mainMod SHIFT, j, movewindow, d"
+        "$mainMod SHIFT, k, movewindow, u"
+        "$mainMod SHIFT, l, movewindow, r"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
