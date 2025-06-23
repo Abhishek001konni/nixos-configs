@@ -25,8 +25,8 @@
     style=Fusion
 
     [Fonts]
-    fixed="DejaVu Sans,12,-1,5,50,0,0,0,0,0,Book"
-    general="DejaVu Sans,11,-1,5,50,0,0,0,0,0,Book"
+    fixed="JetBrains Mono,12,-1,5,50,0,0,0,0,0,Book"
+    general="Inter,11,-1,5,50,0,0,0,0,0,Book"
 
     [Interface]
     activate_item_on_single_click=1
@@ -58,8 +58,8 @@
     style=Fusion
 
     [Fonts]
-    fixed="DejaVu Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Book"
-    general="DejaVu Sans,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Book"
+    fixed="JetBrains Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Book"
+    general="Inter,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Book"
 
     [Interface]
     activate_item_on_single_click=1
