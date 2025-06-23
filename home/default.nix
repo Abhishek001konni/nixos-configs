@@ -21,5 +21,6 @@
     ./rofi-powermenu.nix
     ./qt.nix
     ./xdg.nix
+    ./systemd-user-services.nix
   ];
 }

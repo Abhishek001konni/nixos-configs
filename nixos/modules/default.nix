@@ -19,5 +19,7 @@
     ./nh.nix
     ./substituters.nix
     ./docker.nix
+    ./session-variables.nix
+    ./audio.nix
   ];
 }

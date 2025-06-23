@@ -28,16 +28,6 @@
     };
   };
 
-  # Allow unfree packages (enabled in pkgs set)
-  # nixpkgs.config.allowUnfree = true;
-
-  # Environment variables
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "radeonsi"; # AMD hardware acceleration
-    NIXOS_OZONE_WL = "1"; # Prefer Wayland in apps
-    WLR_NO_HARDWARE_CURSORS = "1"; # Optional: fixes cursor glitches
-  };
-
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -46,22 +36,6 @@
 
   # Enable Polkit
   security.polkit.enable = true;
-
-  # Enable polkit_gnome
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wants = [ "graphical-session.target" ];
-    wantedBy = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
 
   # Enable bluetooth and blueman
   hardware.bluetooth.enable = true;
@@ -100,22 +74,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
-
-  # Enable sound with pipewire.
-  # services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
