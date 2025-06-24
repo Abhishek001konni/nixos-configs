@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./shared.nix
     ./home.nix
     ./packages.nix
     ./zsh.nix

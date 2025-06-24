@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dotfiles, ... }:
 
 {
   programs.fastfetch = {
@@ -10,7 +10,7 @@
       };
 
       logo = {
-        source = toString ./../dotfiles/assets/nixos.png;
+        source = "${dotfiles}/assets/nixos.png";
         type = "kitty-direct";
         height = 15;
         width = 25;

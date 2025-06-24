@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
+  dotfiles,
   ...
 }:
 let
-  wallpaper = toString ./../dotfiles/assets/wallpaper.jpg;
+  wallpaper = "${dotfiles}/assets/wallpaper.jpg";
 in
 {
   services.hyprpaper = {

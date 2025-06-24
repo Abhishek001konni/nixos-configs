@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  dotfiles,
   ...
 }:
 
@@ -202,7 +203,7 @@
         };
 
         image = {
-          path = toString ./../dotfiles/assets/nix.svg;
+          path = "${dotfiles}/assets/nix.svg";
           size = 20;
           on-click = "walker";
         };
