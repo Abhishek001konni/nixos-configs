@@ -1,12 +1,12 @@
 { ... }:
 let
   dotfiles = builtins.path {
-      path = ../dotfiles;
-      name = "dotfiles";
-    };
+    path = ../dotfiles;
+    name = "dotfiles";
+  };
 in
 {
-    _module.args = {
-        inherit dotfiles;
-    };
+  _module.args = {
+    inherit dotfiles;
+  };
 }

@@ -1,4 +1,9 @@
-{ config, pkgs, dotfiles, ... }:
+{
+  config,
+  pkgs,
+  dotfiles,
+  ...
+}:
 
 {
   programs.fastfetch = {
