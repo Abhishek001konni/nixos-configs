@@ -53,6 +53,7 @@
     obs-studio
 
     #Terminal/Editor
+    nixfmt-rfc-style
     wezterm
 
     #Wayland/Hyprland Utilities

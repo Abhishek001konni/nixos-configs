@@ -81,7 +81,5 @@
           ];
         };
       };
-      # Formatter
-      formatter.${system} = pkgs.nixfmt-tree;
     };
 }
