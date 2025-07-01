@@ -28,6 +28,9 @@
     };
   };
 
+  # ld
+  programs.nix-ld.enable = true;
+
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

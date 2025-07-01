@@ -114,12 +114,12 @@
           "borderangle, 1, 8, default"
 
           "windows, 1, 7, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 6, wind, slide"
+          "windowsIn, 1, 5, winIn, slide"
+          "windowsOut, 1, 4, winOut, slide"
+          "windowsMove, 1, 5, wind, slide"
 
           "fade, 1, 7, md3_decel"
-          "fadeIn, 1, 7, md3_decel"
+          "fadeIn, 1, 3, md3_decel"
           "fadeOut, 1, 3, md3_accel"
 
           "layers, 1, 4, wind"
@@ -241,6 +241,9 @@
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        "$mainMod, B, exec, hyprctl keyword decoration:inactive_opacity $([ $(hyprctl getoption decoration:inactive_opacity -j | jq -r '.float') = '0.700000' ] && echo '1.0' || echo '0.7')"
+
       ];
 
       binde = [
