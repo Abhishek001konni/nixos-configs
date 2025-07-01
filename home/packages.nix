@@ -53,7 +53,6 @@
     obs-studio
     pavucontrol
 
-
     #Terminal/Editor
     nixfmt-tree
     wezterm
