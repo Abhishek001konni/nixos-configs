@@ -51,6 +51,8 @@
     #Media
     mpv
     obs-studio
+    pavucontrol
+
 
     #Terminal/Editor
     nixfmt-tree
