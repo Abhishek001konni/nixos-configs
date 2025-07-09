@@ -69,6 +69,10 @@
               "<span color='#ca9ee6' size='medium'>󰹑</span> <span color='#ca9ee6' size='10240' rise='0'>Flameshot</span>";
             "polkit-gnome-authentication-agent-1" =
               "<span color='#89b4fa' size='medium'></span> <span color='#89b4fa' size='10240' rise='0'>Polkit Agent</span>";
+            "org.pulseaudio.pavucontrol" =
+              "<span color='#f9e2af' size='medium'>󰓃</span> <span color='#f9e2af' size='10240' rise='0'>Pavucontrol</span>";
+            ".blueman-manager-wrapped" =
+              "<span color='#89b4fa' size='medium'>󰂯</span> <span color='#89b4fa' size='10240' rise='0'>Blueman</span>";
             "MainPicker" =
               "<span color='#ff6b6b' size='large'>󰏘</span> <span size='10240' rise='1024'>Color Picker</span>";
           };
