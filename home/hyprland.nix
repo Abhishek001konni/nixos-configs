@@ -201,8 +201,8 @@
         "$mainMod, C, exec, copyq menu"
         "$mainMod, X, exec, rofi-powermenu-script"
         "$mainMod, TAB, overview:toggle"
-
         "ALT, Tab, workspace, previous"
+        "$mainMod, N, exec, pkill -SIGUSR1 waybar"
 
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"

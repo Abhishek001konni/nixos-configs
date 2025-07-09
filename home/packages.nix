@@ -19,6 +19,7 @@
     ripgrep
     tree
     unzip
+    nodejs_24
 
     #Clipboard/Screenshots
     copyq
