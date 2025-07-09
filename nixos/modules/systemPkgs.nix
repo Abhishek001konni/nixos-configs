@@ -12,5 +12,6 @@
     pciutils
     polkit_gnome
     nautilus
+    pulseaudio
   ];
 }
