@@ -16,7 +16,7 @@
 
     # Hyprland
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.49.0";
+      url = "github:hyprwm/Hyprland/v0.50.1";
     };
 
   };
