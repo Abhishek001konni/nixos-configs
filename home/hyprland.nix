@@ -34,8 +34,8 @@
 
       # Autostart
       "exec-once" = [
-        "hyprlock"
         "hyprpaper"
+        "hyprlock"
         "walker --gapplication-service"
         "copyq --start-server"
       ];
@@ -195,7 +195,7 @@
         "$mainMod, E, exec, brave"
         "$mainMod CTRL, L, exec, hyprlock"
         "$mainMod, S, exec, rofi-screenshot-script"
-        "$mainMod, C, exec, copyq menu"
+        "$mainMod, C, exec, copyq show"
         "$mainMod, X, exec, rofi-powermenu-script"
         "ALT, Tab, workspace, previous"
         "$mainMod, N, exec, pkill -SIGUSR1 waybar"

@@ -6,5 +6,6 @@
     font-awesome
     roboto
     inter
+    victor-mono
   ];
 }
