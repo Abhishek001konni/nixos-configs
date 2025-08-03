@@ -48,6 +48,7 @@
     #Networking
     brave
     networkmanagerapplet
+    postman
 
     #Media
     mpv
