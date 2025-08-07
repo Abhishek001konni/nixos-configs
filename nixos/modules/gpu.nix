@@ -2,6 +2,8 @@
   config,
   lib,
   pkgs,
+  inputs,
+  hyprPkgs,
   ...
 }:
 {
@@ -13,6 +15,9 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+
+    package = hyprPkgs.mesa;
+    package32 = hyprPkgs.pkgsi686Linux.mesa;
   };
 
   # NVIDIA configuration (offload mode)
@@ -42,6 +47,5 @@
     vulkan-tools
     libva
     libva-utils
-    mesa
   ];
 }

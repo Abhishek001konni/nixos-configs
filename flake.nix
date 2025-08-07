@@ -54,6 +54,14 @@
         };
       };
 
+      # Hyprland's nixpkgs
+      hyprPkgs = import hyprland.inputs.nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
+
     in
     {
       nixosConfigurations = {
@@ -62,7 +70,12 @@
           pkgs = pkgs;
 
           specialArgs = {
-            inherit inputs pkgs-stable username;
+            inherit
+              inputs
+              pkgs-stable
+              hyprPkgs
+              username
+              ;
           };
 
           modules = [
