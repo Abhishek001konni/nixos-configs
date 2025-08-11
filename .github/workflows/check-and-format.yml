@@ -77,5 +77,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: auto-format Nix code [skip ci]"
-          file_pattern: "**/*.nix"
-          disable_globbing: true
+          file_pattern: |
+            *.nix
+            **/*.nix
