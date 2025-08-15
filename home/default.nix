@@ -16,6 +16,7 @@
     ./fastfetch.nix
     ./waybar.nix
     ./swaync.nix
+    ./swappy.nix
     ./hyprpaper.nix
     ./rofi-screenshot.nix
     ./rofi-powermenu.nix
