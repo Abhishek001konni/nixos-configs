@@ -128,7 +128,7 @@ in
       };
     };
     style = ''
-                @define-color shadow rgba(0, 0, 0, 0.25);
+          @define-color shadow rgba(0, 0, 0, 0.25);
       /*
       *
       * Catppuccin Mocha palette
@@ -175,22 +175,18 @@ in
         background-clip: border-box;
       }
 
-      /* #notifications_box { */
-      /*   border: solid 4px red; */
-      /* } */
 
       label {
         color: @text;
       }
 
+
       .notification {
         border: none;
+        outline: none;
         box-shadow: none;
-        /* margin: -15px -10px -15px -10px; */
-        border-radius: 4px;
-        background: inherit;
-        /* background: @theme_bg_color; */
-        /* background: shade(alpha(@borders, 2.55), 0.25); */
+        background: rgba(17, 24, 39, 0.95); 
+        border-radius: 12px;
       }
 
       .notification button {
@@ -207,6 +203,7 @@ in
       }
 
       .notification-content {
+        background: transparent;
         min-height: 64px;
         margin: 10px;
         padding: 0px;
@@ -300,13 +297,9 @@ in
         padding: 4px;
       }
 
-      /* .right.overlay-indicator { */
-      /*   border: solid 5px red; */
-      /* } */
-
       .control-center-list {
         /* background: @base; */
-        background: alpha(@crust, .80);
+        background: transparent;
         min-height: 5px;
         /* border: 1px solid @surface1; */
         border-top: none;
@@ -323,8 +316,9 @@ in
 
       .notification-group {
         /* unset the annoying focus thingie */
-        opacity: 0;
+        opacity: 1;
         box-shadow: none;
+        background: transparent;
         /* selectable: no; */
       }
 
@@ -342,14 +336,9 @@ in
 
       .notification-row {
         outline: none;
-        transition: all 1s ease;
-        background: alpha(@mantle, .80);
-        /* background: @theme_bg_color; */
-        border: 0px solid @crust;
-        margin: 10px 5px 0px 5px;
-        border-radius: 14px;
-        /* box-shadow: 0px 0px 4px black; */
-        /* background: alpha(currentColor, 0.05); */
+        border: none;
+        box-shadow: none;
+        background: transparent; 
       }
 
       .notification-row:focus,
