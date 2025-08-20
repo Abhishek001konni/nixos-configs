@@ -45,8 +45,8 @@
               "<span color='#cba6f7' size='large'>󰄛</span> <span color='#cba6f7' size='10240' rise='1536'>Kitty</span>";
             "firefox" =
               "<span color='#f5a97f' size='large'>󰈹</span> <span color='#f5a97f' size='10240' rise='1024'>Firefox</span>";
-            "brave-browser" =
-              "<span color='#eed49f' size='medium'></span> <span color='#eed49f' size='10240' rise='0'>Brave</span>";
+            "zen-beta" =
+              "<span color='#d4ba48' size='medium'></span> <span color='#d4ba48' size='10240' rise='0'>zen-browser</span>";
             "org.gnome.Nautilus" =
               "<span color='#89dceb' size='medium'></span> <span color='#89dceb' size='10240' rise='-512'>Files</span>";
             "org.gnome.Loupe" =
@@ -75,6 +75,8 @@
               "<span color='#89b4fa' size='medium'>󰂯</span> <span color='#89b4fa' size='10240' rise='0'>Blueman</span>";
             "MainPicker" =
               "<span color='#ff6b6b' size='large'>󰏘</span> <span size='10240' rise='1024'>Color Picker</span>";
+            "nm-connection-editor" = 
+              "<span color='#8086e0' size='medium'></span> <span size='10240' rise='0'>Network Editor</span>";
           };
         };
 
