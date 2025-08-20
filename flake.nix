@@ -19,6 +19,12 @@
       url = "github:hyprwm/Hyprland/v0.50.1";
     };
 
+    #zen-browser
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+
   };
 
   outputs =

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -46,9 +47,11 @@
     materialgram
 
     #Networking
-    brave
     networkmanagerapplet
     postman
+
+    #browser
+    inputs.zen-browser.packages.${pkgs.system}.default
 
     #Media
     mpv
