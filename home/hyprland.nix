@@ -192,7 +192,7 @@
         "$mainMod, G, togglegroup,"
         "$mainMod, F, fullscreen"
         "$mainMod, W, exec, $browser"
-        "$mainMod, E, exec, brave"
+        "$mainMod, E, exec, zen"
         "$mainMod CTRL, L, exec, hyprlock"
         "$mainMod, S, exec, rofi-screenshot-script"
         "$mainMod, C, exec, copyq show"
