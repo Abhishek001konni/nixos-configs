@@ -24,7 +24,6 @@
 
     #Clipboard/Screenshots
     copyq
-    flameshot
     grim
     slurp
     swappy

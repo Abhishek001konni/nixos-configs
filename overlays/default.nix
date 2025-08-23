@@ -1,4 +1,4 @@
 { inputs, ... }:
 [
-  (import ./flameshot.nix)
+  #(import ./flameshot.nix)
 ]
