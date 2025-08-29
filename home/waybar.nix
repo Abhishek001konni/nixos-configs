@@ -26,7 +26,6 @@
         ];
         modules-center = [ "clock" ];
         modules-right = [
-          "power-profiles-daemon"
           "backlight"
           "pulseaudio"
           "network"
