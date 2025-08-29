@@ -71,12 +71,14 @@ jobs:
 
       - name: Format Nix code
         run: nix run github:NixOS/nixpkgs/641d909c4a7538f1539da9240dedb1755c907e40#nixfmt-tree
+        
+      - name: Show git status
+        run: git status
 
+      - name: Add changed files
+        run: git add '*.nix' '**/*.nix'
 
       - name: Auto commit formatted code
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: auto-format Nix code [skip ci]"
-          file_pattern: |
-            *.nix
-            **/*.nix
