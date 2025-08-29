@@ -26,6 +26,7 @@
         ];
         modules-center = [ "clock" ];
         modules-right = [
+          "disk"
           "backlight"
           "pulseaudio"
           "network"
@@ -149,6 +150,17 @@
           format-warning = "󰂃 {capacity}%";
           tooltip-format = "{capacity}%";
         };
+
+        disk = {
+  interval = 30;
+  path = "/";
+  format = " {percentage_free}%";
+  tooltip = true;
+  tooltip-format = "Used: {used} / {total} ({percentage_used}%)";
+  states = {
+    warning = 20;
+    };
+};
 
         network = {
           format-wifi = "{icon} {essid}";
@@ -420,6 +432,14 @@
         padding-left: 11px;
         padding-right: 13px;
         color: @yellow;
+      }
+      
+      #disk {
+        color: @sky;
+      }
+
+      #disk.warning {
+      color: #ff0000;
       }
 
       #custom-pacman { color: @peach; }
