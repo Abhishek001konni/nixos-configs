@@ -21,6 +21,7 @@
     tree
     unzip
     nodejs_24
+    jdk24
 
     #Clipboard/Screenshots
     copyq
@@ -60,9 +61,10 @@
     #Terminal/Editor
     nixfmt-tree
     wezterm
+    jetbrains.idea-ultimate
 
     #Wayland/Hyprland Utilities
     walker
-    rofi-wayland
+    rofi
   ];
 }
