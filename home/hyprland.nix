@@ -162,11 +162,6 @@
         };
       };
 
-      # Gestures
-      gestures = {
-        workspace_swipe = true;
-      };
-
       # Per-device input config
       device = [
         {
