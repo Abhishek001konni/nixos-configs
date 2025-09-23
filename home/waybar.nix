@@ -75,7 +75,7 @@
               "<span color='#89b4fa' size='medium'>󰂯</span> <span color='#89b4fa' size='10240' rise='0'>Blueman</span>";
             "MainPicker" =
               "<span color='#ff6b6b' size='large'>󰏘</span> <span size='10240' rise='1024'>Color Picker</span>";
-            "nm-connection-editor" = 
+            "nm-connection-editor" =
               "<span color='#8086e0' size='medium'></span> <span size='10240' rise='0'>Network Editor</span>";
           };
         };
@@ -152,15 +152,15 @@
         };
 
         disk = {
-  interval = 30;
-  path = "/";
-  format = " {percentage_free}%";
-  tooltip = true;
-  tooltip-format = "Used: {used} / {total} ({percentage_used}%)";
-  states = {
-    warning = 20;
-    };
-};
+          interval = 30;
+          path = "/";
+          format = " {percentage_free}%";
+          tooltip = true;
+          tooltip-format = "Used: {used} / {total} ({percentage_used}%)";
+          states = {
+            warning = 20;
+          };
+        };
 
         network = {
           format-wifi = "{icon} {essid}";
@@ -433,7 +433,7 @@
         padding-right: 13px;
         color: @yellow;
       }
-      
+
       #disk {
         color: @sky;
       }

@@ -2,18 +2,18 @@
 
 let
   myjdk = pkgs.zulu25;
-in 
+in
 {
-    programs.java = {
-        enable = true;
-        package = myjdk;
-      };
+  programs.java = {
+    enable = true;
+    package = myjdk;
+  };
 
-      home.packages = [
-      pkgs.maven
-      (pkgs.gradle.override { java = myjdk; })
-      ];
+  home.packages = [
+    pkgs.maven
+    (pkgs.gradle.override { java = myjdk; })
+  ];
 
   home.file.".jdks/zulu-25".source = myjdk;
 
-  }
+}
