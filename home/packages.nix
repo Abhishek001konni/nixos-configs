@@ -21,7 +21,6 @@
     tree
     unzip
     nodejs_24
-    jdk24
 
     #Clipboard/Screenshots
     copyq

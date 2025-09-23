@@ -23,5 +23,6 @@
     ./qt.nix
     ./xdg.nix
     ./systemd-user-services.nix
+    ./java.nix
   ];
 }
