@@ -21,6 +21,7 @@
     tree
     unzip
     nodejs_24
+    zip
 
     #Clipboard/Screenshots
     copyq
