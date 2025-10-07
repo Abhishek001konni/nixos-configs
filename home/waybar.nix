@@ -222,7 +222,7 @@
         image = {
           path = "${dotfiles}/assets/nix.svg";
           size = 20;
-          on-click = "walker";
+          on-click = "vicinae";
         };
 
         "custom/notification" = {

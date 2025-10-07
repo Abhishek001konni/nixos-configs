@@ -28,7 +28,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       #"$screenshot" = "flameshot gui";
-      "$menu" = "walker";
+      "$menu" = "vicinae";
       "$browser" = "firefox";
       "$mainMod" = "SUPER";
 
@@ -36,7 +36,6 @@
       "exec-once" = [
         "hyprpaper"
         "hyprlock"
-        "walker --gapplication-service"
         "copyq --start-server"
       ];
 

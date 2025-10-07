@@ -64,7 +64,6 @@
     jetbrains.idea-ultimate
 
     #Wayland/Hyprland Utilities
-    walker
     rofi
   ];
 }

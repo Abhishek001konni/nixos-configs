@@ -25,6 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #Vicinae
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+    };
   };
 
   outputs =

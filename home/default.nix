@@ -24,5 +24,6 @@
     ./xdg.nix
     ./systemd-user-services.nix
     ./java.nix
+    ./vicinae.nix
   ];
 }
