@@ -1,11 +1,11 @@
 { inputs, config, ... }:
 {
-    imports = [ inputs.vicinae.homeManagerModules.default ];
+  imports = [ inputs.vicinae.homeManagerModules.default ];
 
-    services.vicinae = {
-  enable = true;
-  autoStart = true;
-  settings = {
+  services.vicinae = {
+    enable = true;
+    autoStart = true;
+    settings = {
       faviconService = "twenty"; # twenty | google | none
       font.size = 11;
       popToRootOnClose = false;
@@ -16,7 +16,7 @@
         opacity = 0.95;
         rounding = 10;
       };
-   };
-};
+    };
+  };
 
 }
