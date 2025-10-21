@@ -5,8 +5,8 @@
   programs.git = {
     enable = true;
     settings = {
-    user.name = "Abhishek001konni";
-    user.email = "abhishek001konni@gmail.com";
+      user.name = "Abhishek001konni";
+      user.email = "abhishek001konni@gmail.com";
       gpg = {
         format = "ssh";
       };
