@@ -28,7 +28,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       #"$screenshot" = "flameshot gui";
-      "$menu" = "vicinae";
+      "$menu" = "vicinae toggle";
       "$browser" = "firefox";
       "$mainMod" = "SUPER";
 

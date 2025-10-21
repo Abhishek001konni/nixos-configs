@@ -4,9 +4,9 @@
   # Basic configuration for git
   programs.git = {
     enable = true;
-    userName = "Abhishek001konni";
-    userEmail = "abhishek001konni@gmail.com";
-    extraConfig = {
+    settings = {
+    user.name = "Abhishek001konni";
+    user.email = "abhishek001konni@gmail.com";
       gpg = {
         format = "ssh";
       };

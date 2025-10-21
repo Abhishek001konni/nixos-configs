@@ -222,14 +222,14 @@
         image = {
           path = "${dotfiles}/assets/nix.svg";
           size = 20;
-          on-click = "vicinae";
+          on-click = "vicinae toggle";
         };
 
         "custom/notification" = {
           tooltip = false;
-          format = "{icon} {}";
+          format = "{icon}";
           "format-icons" = {
-            notification = "󱅫";
+            notification = "󱅫 ";
             none = "";
             "dnd-notification" = " ";
             "dnd-none" = "󰂛";
@@ -454,7 +454,8 @@
 
       #custom-notification {
         color: #f2cdcd;
-        margin-right: 28px;
+        margin-right: 25px;
+        padding-right: 15px;
       }
 
       #bluetooth {
