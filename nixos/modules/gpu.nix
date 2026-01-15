@@ -43,7 +43,7 @@
 
   # Tools and utilities
   environment.systemPackages = with pkgs; [
-  mesa-demos
+    mesa-demos
     vulkan-tools
     libva
     libva-utils

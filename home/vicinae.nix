@@ -1,17 +1,22 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
   services.vicinae = {
     enable = true;
     package = pkgs.vicinae;
-     systemd = {
+    systemd = {
       enable = true; # default: false
       autoStart = true; # default: false
       environment = {
         USE_LAYER_SHELL = 1;
       };
-     };
+    };
     settings = {
       faviconService = "twenty"; # twenty | google | none
       font.size = 11;

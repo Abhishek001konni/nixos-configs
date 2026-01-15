@@ -81,45 +81,45 @@
       };
 
       # Animations
-animations = {
-  enabled = true;
+      animations = {
+        enabled = true;
 
-  bezier = [
-    # Different curves for different feels
-    "md3_decel, 0.05, 0.7, 0.1, 1"         # Material Design deceleration
-    "md3_accel, 0.3, 0, 0.8, 0.15"         # Material Design acceleration  
-    "overshot, 0.05, 0.9, 0.1, 1.05"       # Slight overshoot
-    "crazyshot, 0.1, 1.5, 0.76, 0.92"      # More pronounced bounce
-    "hyprnostretch, 0.05, 0.9, 0.1, 1.0"   # Smooth without stretch
-  ];
+        bezier = [
+          # Different curves for different feels
+          "md3_decel, 0.05, 0.7, 0.1, 1" # Material Design deceleration
+          "md3_accel, 0.3, 0, 0.8, 0.15" # Material Design acceleration
+          "overshot, 0.05, 0.9, 0.1, 1.05" # Slight overshoot
+          "crazyshot, 0.1, 1.5, 0.76, 0.92" # More pronounced bounce
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0" # Smooth without stretch
+        ];
 
-  animation = [
-    "border, 1, 10, default"
-    "borderangle, 1, 30, linear, loop"
-    
-    # Windows use deceleration curves
-    "windows, 1, 4, md3_decel, popin 60%"
-    "windowsIn, 1, 4, md3_decel, popin 60%"
-    "windowsOut, 1, 3, md3_accel, popin 60%"
-    "windowsMove, 1, 4, md3_decel, slide"
-    
-    # Fades are quick
-    "fade, 1, 3, md3_decel"
-    "fadeIn, 1, 2.5, md3_decel"
-    "fadeOut, 1, 2, md3_accel"
-    
-    # Layers (rofi etc) with bounce
-    "layers, 1, 3, overshot"
-    "layersIn, 1, 3, overshot, slide"
-    "layersOut, 1, 2.5, md3_accel"
-    
-    # Workspaces - faster to reduce shadow overlap
-    "workspaces, 1, 3, md3_decel, slide"
-    "workspacesIn, 1, 3, md3_decel, slide"
-    "workspacesOut, 1, 2.5, md3_accel, slide"
-    "specialWorkspace, 1, 3, md3_decel, slidevert"
-  ];
-};
+        animation = [
+          "border, 1, 10, default"
+          "borderangle, 1, 30, linear, loop"
+
+          # Windows use deceleration curves
+          "windows, 1, 4, md3_decel, popin 60%"
+          "windowsIn, 1, 4, md3_decel, popin 60%"
+          "windowsOut, 1, 3, md3_accel, popin 60%"
+          "windowsMove, 1, 4, md3_decel, slide"
+
+          # Fades are quick
+          "fade, 1, 3, md3_decel"
+          "fadeIn, 1, 2.5, md3_decel"
+          "fadeOut, 1, 2, md3_accel"
+
+          # Layers (rofi etc) with bounce
+          "layers, 1, 3, overshot"
+          "layersIn, 1, 3, overshot, slide"
+          "layersOut, 1, 2.5, md3_accel"
+
+          # Workspaces - faster to reduce shadow overlap
+          "workspaces, 1, 3, md3_decel, slide"
+          "workspacesIn, 1, 3, md3_decel, slide"
+          "workspacesOut, 1, 2.5, md3_accel, slide"
+          "specialWorkspace, 1, 3, md3_decel, slidevert"
+        ];
+      };
 
       # Dwindle layout
       dwindle = {
@@ -262,7 +262,6 @@ animations = {
       ];
       # layer rules
 
-
     };
     extraConfig = ''
       layerrulev2=blur, rofi
@@ -276,6 +275,6 @@ animations = {
 
       layerrulev2=blur, swaync-control-center
       layerrulev2=ignorezero, swaync-control-center
-    ''; 
+    '';
   };
 }

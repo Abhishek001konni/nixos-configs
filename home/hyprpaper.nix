@@ -9,11 +9,11 @@ let
 in
 {
   services.hyprpaper.enable = false;
-  
+
   home.file.".config/hypr/hyprpaper.conf".text = ''
     splash = false
     ipc = on
-    
+
     wallpaper {
       monitor = eDP-1
       path = ${wallpaperPath}
