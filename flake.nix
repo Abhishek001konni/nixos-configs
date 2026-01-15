@@ -98,7 +98,7 @@
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 pkgs-stable = pkgs-stable;
-                inherit inputs username;
+                inherit inputs username system;
               };
             }
           ];

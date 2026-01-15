@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  system,
   ...
 }:
 
@@ -51,7 +52,7 @@
     postman
 
     #browser
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${system}.default
 
     #Media
     mpv
@@ -61,7 +62,7 @@
     #Terminal/Editor
     nixfmt-tree
     wezterm
-    jetbrains.idea-ultimate
+    jetbrains.idea
 
     #Wayland/Hyprland Utilities
     rofi

@@ -22,8 +22,6 @@
   home.sessionVariables = {
     XCURSOR_THEME = "macOS";
     XCURSOR_SIZE = "28";
-    HYPRCURSOR_THEME = "macOS";
-    HYPRCURSOR_SIZE = "28";
     MOZ_ENABLE_WAYLAND = "1";
   };
 
