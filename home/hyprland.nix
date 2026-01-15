@@ -89,11 +89,11 @@
           "md3_decel, 0.05, 0.7, 0.1, 1"
           "md3_accel, 0.3, 0, 0.8, 0.15"
 
-          "overshot, 0.05, 0.9, 0.1, 1.05"
+          "overshot, 0.05, 0.9, 0.1, 1.0"
           "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
-          "wind, 0.05, 0.9, 0.1, 1.05"
+          "wind, 0.3, 0.0, 0.0, 1.0"
 
-          "winIn, .09,1.16,.18,1.2"
+          "winIn, 0.09, 1.0, 0.18, 1.0"
           "winOut, 0.3, -0.3, 0, 1"
 
           "liner, 1, 1, 1, 1"
@@ -145,7 +145,7 @@
         disable_hyprland_logo = true;
       };
       debug = {
-        disable_logs = true; # Enable full logging
+        disable_logs = false; # Enable full logging
       };
 
       # Input
@@ -268,17 +268,21 @@
         "float,class:^(com\\.github\\.hluk\\.copyq)$"
       ];
       # layer rules
-      layerrule = [
-        "blur, rofi"
-        "ignorezero, rofi"
-        "ignorealpha 0.2, rofi"
-        "blur,notifications"
-        "ignorezero,notifications"
-        "blur,swaync-notification-window"
-        "ignorezero,swaync-notification-window"
-        "blur,swaync-control-center"
-        "ignorezero,swaync-control-center"
-      ];
+
+
     };
+    extraConfig = ''
+      layerrulev2=blur, rofi
+      layerrulev2=ignorezero, rofi
+
+      layerrulev2=blur, notifications
+      layerrulev2=ignorezero, notifications
+
+      layerrulev2=blur, swaync-notification-window
+      layerrulev2=ignorezero, swaync-notification-window
+
+      layerrulev2=blur, swaync-control-center
+      layerrulev2=ignorezero, swaync-control-center
+    ''; 
   };
 }
