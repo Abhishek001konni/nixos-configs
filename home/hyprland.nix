@@ -31,7 +31,7 @@
 
       # Autostart
       "exec-once" = [
-        "sleep 2 && ${pkgs.hyprpaper}/bin/hyprpaper"
+        "sleep 1 && ${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprlock"
         "copyq --start-server"
       ];
@@ -81,52 +81,45 @@
       };
 
       # Animations
-      animations = {
-        enabled = true;
+animations = {
+  enabled = true;
 
-        bezier = [
-          "md3_standard, 0.2, 0, 0, 1.0"
-          "md3_decel, 0.05, 0.7, 0.1, 1"
-          "md3_accel, 0.3, 0, 0.8, 0.15"
+  bezier = [
+    # Different curves for different feels
+    "md3_decel, 0.05, 0.7, 0.1, 1"         # Material Design deceleration
+    "md3_accel, 0.3, 0, 0.8, 0.15"         # Material Design acceleration  
+    "overshot, 0.05, 0.9, 0.1, 1.05"       # Slight overshoot
+    "crazyshot, 0.1, 1.5, 0.76, 0.92"      # More pronounced bounce
+    "hyprnostretch, 0.05, 0.9, 0.1, 1.0"   # Smooth without stretch
+  ];
 
-          "overshot, 0.05, 0.9, 0.1, 1.0"
-          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
-          "wind, 0.3, 0.0, 0.0, 1.0"
-
-          "winIn, 0.09, 1.0, 0.18, 1.0"
-          "winOut, 0.3, -0.3, 0, 1"
-
-          "liner, 1, 1, 1, 1"
-          "easeInOutCirc, 0.85, 0, 0.15, 1"
-          "easeOutCirc, 0, 0.55, 0.45, 1"
-          "easeOutExpo, 0.16, 1, 0.3, 1"
-        ];
-
-        animation = [
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-
-          "windows, 1, 7, wind, slide"
-          "windowsIn, 1, 5, winIn, slide"
-          "windowsOut, 1, 4, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-
-          "fade, 1, 7, md3_decel"
-          "fadeIn, 1, 3, md3_decel"
-          "fadeOut, 1, 3, md3_accel"
-
-          "layers, 1, 4, wind"
-          "layersIn, 1, 3, winIn, slide"
-          "layersOut, 1, 3, winOut"
-          "fadeLayersIn, 1, 4, wind"
-          "fadeLayersOut, 1, 2, md3_accel"
-
-          "workspaces, 1, 6, overshot, slide"
-          "workspacesIn, 1, 6, overshot, slide"
-          "workspacesOut, 1, 6, overshot, slide"
-          "specialWorkspace, 1, 6, md3_decel, slide"
-        ];
-      };
+  animation = [
+    "border, 1, 10, default"
+    "borderangle, 1, 30, linear, loop"
+    
+    # Windows use deceleration curves
+    "windows, 1, 4, md3_decel, popin 60%"
+    "windowsIn, 1, 4, md3_decel, popin 60%"
+    "windowsOut, 1, 3, md3_accel, popin 60%"
+    "windowsMove, 1, 4, md3_decel, slide"
+    
+    # Fades are quick
+    "fade, 1, 3, md3_decel"
+    "fadeIn, 1, 2.5, md3_decel"
+    "fadeOut, 1, 2, md3_accel"
+    
+    # Layers (rofi etc) with bounce
+    "layers, 1, 3, overshot"
+    "layersIn, 1, 3, overshot, slide"
+    "layersOut, 1, 2.5, md3_accel"
+    
+    # Workspaces - faster to reduce shadow overlap
+    "workspaces, 1, 3, md3_decel, slide"
+    "workspacesIn, 1, 3, md3_decel, slide"
+    "workspacesOut, 1, 2.5, md3_accel, slide"
+    "specialWorkspace, 1, 3, md3_decel, slidevert"
+  ];
+};
 
       # Dwindle layout
       dwindle = {
