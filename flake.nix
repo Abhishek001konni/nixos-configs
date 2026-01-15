@@ -16,7 +16,7 @@
 
     # Hyprland
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.51.0";
+      url = "github:hyprwm/Hyprland/v0.53.1";
     };
 
     #zen-browser
