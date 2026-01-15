@@ -31,7 +31,7 @@
 
       # Autostart
       "exec-once" = [
-        "hyprpaper"
+        "sleep 2 && ${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprlock"
         "copyq --start-server"
       ];
